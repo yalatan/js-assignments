@@ -131,7 +131,15 @@ function isTriangle(a,b,c) {
  *  
  */
 function doRectanglesOverlap(rect1, rect2) {
-    throw new Error('Not implemented');
+	let x1 = rect1.top+ rect1.width;
+	let y1 = rect1.left + rect1.height;
+	let x2 = rect2.top;
+	let y2 = rect2.left;
+	if(x1>x2 && y1>y2){
+	return true;	
+	};
+	return false;
+    //throw new Error('Not implemented');
 }
 
 
@@ -162,7 +170,10 @@ function doRectanglesOverlap(rect1, rect2) {
  *   
  */
 function isInsideCircle(circle, point) {
-    throw new Error('Not implemented');
+	let a = Math.sqrt(Math.pow(point.x,2) + Math.pow(point.y,2));
+	if(circle.radius > a){return true}
+	return false;
+    //throw new Error('Not implemented');
 }
 
 
@@ -221,7 +232,11 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+	str = str.split('');
+	str.reverse();
+	str = str.join('');
+	return str;
+    //throw new Error('Not implemented');
 }
 
 
@@ -238,7 +253,8 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+	return +num.toString().split('').reverse().join('');
+    //throw new Error('Not implemented');
 }
 
 
@@ -282,7 +298,16 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+	let arr= num.toString().split('');
+	var result = 0;
+	while(arr.length>1){
+	result = arr.reduce(function(sum, current) {
+  return sum + +current;
+}, 0);
+arr = result.toString().split('');
+	};
+	return result;
+    //throw new Error('Not implemented');
 }
 
 
