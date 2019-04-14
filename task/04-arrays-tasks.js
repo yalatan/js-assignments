@@ -220,9 +220,16 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
+	let newArr=[];
+	let l = arr.length;
+	console.log(l);
+	for(let i=0; i< l; i++){
+console.log('arr[i]:', arr[i]);
+newArr = newArr + arr[i].join(',')+'\n';
+	}
 	
-	
-   throw new Error('Not implemented');
+	return newArr;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -566,6 +573,10 @@ function distinct(arr) {
  *   }
  */
 function group(array, keySelector, valueSelector) {
+	let arr=[];
+	for (keySelector in array) {
+ arr.push(keySelector);
+}
    throw new Error('Not implemented');
 }
 
@@ -623,7 +634,15 @@ function getElementByIndexes(arr, indexes) {
  * 
  */
 function swapHeadAndTail(arr) {
-    throw new Error('Not implemented');
+	let arr3=[];
+	if(arr.length == 1) {return arr;}
+	let l = Math.floor(arr.length/2);
+	let arr2 = arr.slice(0, l);
+	let arr1 = arr.slice(-l);
+	if(arr.length%2 == 1){arr3 = arr[l];
+	return arr1.concat(arr3).concat(arr2)};
+	return arr1.concat(arr2);
+    //throw new Error('Not implemented');
 }
 
 
